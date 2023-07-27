@@ -25,7 +25,7 @@ jobs:
       - run:
           command: cp junit.xml ~/junit/
           when: always
-      - store_test_results:
+  - store_test_results:
           path: ~/junit
 
 workflows:
