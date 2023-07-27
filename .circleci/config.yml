@@ -22,6 +22,11 @@ jobs:
           name: Test application
           command: |
             TEST=$(circleci tests glob "src/__tests__/*.js" | circleci tests split --split-by=timings)
+      - run:
+          command: cp junit.xml ~/junit/un
+      - store_test_results:
+          path: ~/junit
+
 workflows:
   basic_workflow:
     jobs:
